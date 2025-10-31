@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import styles from "./Layout.module.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,11 +26,48 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={styles.container}>
+        {/* HEADER */}
+        <header className={styles.header}>
+          <div className={styles.logo}>Your Next Store</div>
+          <nav className={styles.nav}>
+            <Link href={'/'}>Accessories</Link>
+            <Link href={'/'}>Celulares</Link>
+            <Link href={'/sendEmail'}>Enviar Email</Link>
+          </nav>
+          <div className={styles.search}>
+            <input type="text" placeholder="Search for products..." />
+            <button>🔍</button>
+          </div>
+        </header>
+
+        {/* MAIN */}
+        <main className={styles.main}>{children}</main>
+
+        {/* FOOTER */}
+        <footer className={styles.footer}>
+          <div className={styles.footerTop}>
+            <p>© 2025 YNS Demo. All rights reserved.</p>
+            <div className={styles.social}>
+              <span>🌐</span>
+              <span>📸</span>
+              <span>💼</span>
+            </div>
+          </div>
+          <div className={styles.footerBottom}>
+            <nav>
+              <Link href={'/'}>Accessories</Link>
+              <Link href={'/'}>Celulares</Link>
+              <Link href={'/'}>Tecnologia</Link>
+            </nav>
+            <div className={styles.subscribe}>
+              <input type="email" placeholder="Enter your email" />
+              <button>Subscribe</button>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );
 }
+
