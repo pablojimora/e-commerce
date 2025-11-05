@@ -2,7 +2,7 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { z } from "zod";
 import bcrypt from "bcrypt";
-import dbConnection from "../lib/dbconection";
+import dbConnection from "./app/lib/dbconection";
 import Users from "@/app/models/users";
 import { IUser } from "@/app/interfaces/users";
 

@@ -1,7 +1,7 @@
 'use server';
  
 import { AuthError } from 'next-auth';
-import { signIn } from '../src/auth';
+import { signIn } from '../../auth';
  
 // ...
  

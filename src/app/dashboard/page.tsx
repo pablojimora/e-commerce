@@ -6,7 +6,7 @@ export default function HomePage() {
     <div className={styles.home}>
       <section className={styles.hero}>
         <div>
-          <h1>Bienvenido a Copcity.</h1>
+          <h1>Bienvenido a Copcity. DASHBOARD</h1>
           <p>Encuentra todo lo semejante a tecnologia con nosotros</p>
           <button>Nuestros Productos</button>
         </div>
